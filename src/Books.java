@@ -1,4 +1,29 @@
+import java.util.Scanner;
 public class Books {
+    public static void main(String[] args) {
+        public static void main (String[]args){
+            Scanner scanner = new Scanner(System.in);
+            int n = scanner.nextInt();
+            scanner.nextLine().trim();
+            Book[] book1 = new Book[n];
+            for (int i = 0; i < n; i++) {
+                String BookName = scanner.nextLine().trim();
+                String AuthorName = scanner.nextLine().trim();
+                long ISBN = Long.parseDouble(scanner.nextLine().trim());
+                book1[i] = new Book(bookName, authorName, ISBNNumber);
+            }
+            for (int i = 0; i < n; i++) {
+
+                System.out.println("----------------");
+                for (int j = 0; j < n; j++) {
+                    System.out.println(book1[j]);
+                }
+            }
+
+
+        }
+
+    }
 }
 
 class Book {
@@ -6,8 +31,10 @@ class Book {
     private String authorName;
     private long ISBNNumber;
 
-    public String getBookName() {
-        return bookname;
+    public Book(String bookName, String authorName, long ISBNNumber) {
+        this.bookName = bookName;
+        this.authorName = authorName;
+        this.ISBNNumber = ISBNNumber;
     }
 
     public void setBookName(String bookName) {
@@ -30,6 +57,13 @@ class Book {
         this.ISBNNumber = ISBNNumber;
     }
 
+    public String getBookName() {
+        return bookName;
+    }
 
-}
+    @Override
+    public String toString() {
+        return String.
+                format(getBookName(), getAuthorName(), getISBNNumber());
+    }
 }
